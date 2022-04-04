@@ -1,0 +1,56 @@
+/* Base */
+.row-textfield {
+  margin-left: 100px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.7;
+  background-color: #0B3B36;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+
+/* Navbar */
+.site-navbar {
+  margin-bottom: 0px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.site-navbar .site-navigation .site-menu {
+  margin-bottom: 0;
+}
+
+.site-navbar .site-navigation .site-menu>li {
+  display: inline-block;
+}
+
+.site-navbar .site-navigation .site-menu>li>a {
+  padding: 5px 20px;
+  color: white;
+  text-decoration: none !important;
+}
+
+.site-navbar .site-navigation .site-menu>li>a:hover {
+  color: rgb(245, 168, 26);
+}
+
+
+
+.site-blocks-cover,
+.site-blocks-cover>.container>.row {
+  min-height: 600px;
+  height: calc(100vh);
+}
+
+.site-blocks-cover p {
+  color: white;
+  line-height: 1.5;
+  font-weight: 300;
+}
