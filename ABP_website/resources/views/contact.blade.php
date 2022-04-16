@@ -2,23 +2,16 @@
 @section('container')
 <div class="row py-5"></div>
 
+
 <!-- ======= Contact Us Section ======= -->
-<section id="about" class="py-5">
+<section id="contact" class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 order-1 order-lg-1">
-                <br><br><br><br>
+        <div class="row py-5">
+            <div class="col">
                 <img src="{{asset('images/contactimage.png')}}" class="img-fluid" alt="">
             </div>
-            <div>
-                <a style="font-size:50px;font-family: 'Lora';color: white;">
-                    Contact
-                </a>
-                <a style="font-size:50px;font-family: 'Lora';color: #FFAD57;">
-                    Us
-                </a>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
                 <form action="" method="POST">
-
                     <div class="form-group">
                         <font size="4" color="white">Nama</font> <br>
                         <input class="form-control" type="text" name="name" placeholder="nama" />
@@ -51,9 +44,4 @@
 
     </div>
 </section>
-<!-- End About Us Section -->
-
-
-
-
 @endsection

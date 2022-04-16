@@ -7,9 +7,7 @@
 <section id="about" class="py-5">
     <div class="container">
         <div class="row py-5">
-            <div class="col-lg-6 order-1 order-lg-2">
-                <br>
-                <br>
+            <div class="col-lg-6 order-lg-2">
                 <br>
                 <a style="font-size:35px;font-family: 'Lora';color: white;">
                     Hi! Story
@@ -22,9 +20,8 @@
                 <a style="font-size:25px;font-family: 'Lora';color: white;">
                     <i>A platform that provides historical museum reviews that take you back to the past.</i>
                 </a>
-
             </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <div class="col">
                 <a style="font-size:50px;font-family: 'Lora';color: white;">
                     About
                 </a>
@@ -37,9 +34,4 @@
 
     </div>
 </section>
-<!-- End About Us Section -->
-
-
-
-
 @endsection
