@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394069698321",
+    "project_id": "hi-story-3d0d9",
+    "storage_bucket": "hi-story-3d0d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394069698321:android:67229cb108a8e6555c4eb0",
+        "android_client_info": {
+          "package_name": "com.example.tubesabp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394069698321-tsnanilsbjvj6ggo1hfoiu34kg5sl1ni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWtdH6-vnkn_Cw69w49aoe5fI1LMrVHwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394069698321-tsnanilsbjvj6ggo1hfoiu34kg5sl1ni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('c_r_u_dadmins', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_tempat');
-            $table->longtext('Description');
-            $table->string('Location');
-            $table->string('Ratings');
-            $table->string('open_hours');
+            $table->string('nama');
+            $table->longtext('deskripsi');
+            $table->string('lokasi');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('kota');
+            $table->string('rating');
+            $table->string('open');
+            $table->string('link_image');
             $table->string('image');
             $table->timestamps();
         });

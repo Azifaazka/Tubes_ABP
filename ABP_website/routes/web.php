@@ -27,8 +27,24 @@ Route::get('/', function () {
 Route::get("/", [MainController::class,'index']);
 Route::get("/about", [MainController::class,'about']);
 Route::get("/contact", [MainController::class,'contact']);
-Route::get("/register", [MainController::class,'register']);
-Route::get("/login", [MainController::class,'login']);
+
+//API route for register new user
+Route::post('/register', [App\Http\Controllers\API\AuthController::class, 'register']);
+//API route for login user
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+
+//Protecting Routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/profile', function(Request $request) {
+        return auth()->user();
+    });
+
+    // API route for logout user
+    Route::post('/logout', [App\Http\Controllers\API\AuthController::class, 'logout']);
+});
+
+// Route::get("/register", [MainController::class,'register']);
+// Route::get("/login", [MainController::class,'login']);
 
 Route::post("/contact/send", [ContactFormController::class,'send']);
 Auth::routes();

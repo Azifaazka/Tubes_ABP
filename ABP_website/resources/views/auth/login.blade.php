@@ -35,11 +35,11 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label><br>
+                                <label for="Email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label><br>
 
                                 <div class="col-md-10">
-                                    <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('emaiusernamel') }}" required autocomplete="username" autofocus>
-                                    @error('username')
+                                    <input id="Email" type="Email" class="form-control @error('Email') is-invalid @enderror" name="Email" value="{{ old('Emaill') }}" required autocomplete="Email" autofocus>
+                                    @error('Email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
