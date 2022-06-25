@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">394069698321-tsnanilsbjvj6ggo1hfoiu34kg5sl1ni.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">394069698321</string>
+    <string name="google_api_key" translatable="false">AIzaSyBWtdH6-vnkn_Cw69w49aoe5fI1LMrVHwM</string>
+    <string name="google_app_id" translatable="false">1:394069698321:android:67229cb108a8e6555c4eb0</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWtdH6-vnkn_Cw69w49aoe5fI1LMrVHwM</string>
+    <string name="google_storage_bucket" translatable="false">hi-story-3d0d9.appspot.com</string>
+    <string name="project_id" translatable="false">hi-story-3d0d9</string>
+</resources>
