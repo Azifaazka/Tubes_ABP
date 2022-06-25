@@ -21,6 +21,9 @@
                 <font size="4" color="white">Description</font> <br>
                 <textarea name="description" placeholder="Description..." class="form-control"></textarea>
                 <br>
+                <font size="4" color="white">Link Image</font> <br>
+                <textarea name="link_image" placeholder="Link image..." class="form-control"></textarea>
+                <br>
                 <font size="4" color="white">Image</font> <br>
                 <div style="background-color:white ;border-radius:30px ">
                     <input type="file" name="image" class="hidden" style="margin-left:2%">

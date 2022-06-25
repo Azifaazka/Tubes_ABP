@@ -44,12 +44,13 @@ class LoginController extends Controller
         $input = $request->all();
    
         $this->validate($request, [
-            'username' => 'required',
+            'Email' => 'required',
             'password' => 'required',
         ]);
    
-        if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
+        if(auth()->attempt(array('Email' => $input['Email'], 'password' => $input['password'])))
         {
+            
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('CRUDreview');
             }else{
@@ -57,7 +58,7 @@ class LoginController extends Controller
             }
         }else{
             return redirect()->route('login')
-                ->with('error','Username And Password Are Wrong.');
+                ->with('error','Email And Password Are Wrong.');
         }
           
     }

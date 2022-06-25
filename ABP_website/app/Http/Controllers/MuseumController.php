@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Resources\MuseumResource;
 use App\Models\CRUDadmin;
 use Illuminate\Http\Request;
 use Faker\Factory as Faker;
@@ -12,6 +14,12 @@ class MuseumController extends Controller
     {
         $data = CRUDadmin::all();
         return view('admin.museums.CRUDreview',['data'=>$data]);
+    }
+    public function CRUDadminapi()
+    {
+        $data = CRUDadmin::all();
+        return MuseumResource ::collection($data);
+
     }
     public function tambahreview()
     {
@@ -28,6 +36,11 @@ class MuseumController extends Controller
         $hasil = CRUDadmin::find($id);
         $komen = reviewModel::all();
         return view('user.museums.allreview', ['hasil'=>$hasil, 'komen'=>$komen, 'id'=>$id]);
+    }
+    public function showcommentapi($id){
+        $hasil = CRUDadmin::find($id);
+        $komen = reviewModel::all();
+        return new MuseumResource($komen);
     }
 
     public function showcommentadmin($id){
@@ -50,13 +63,28 @@ class MuseumController extends Controller
            }
            return redirect('/CRUDreview')->with('success', 'Your data has been added!');
     }
+    public function insertdataapi(Request $REQUEST)
+    {
+        //   dd($REQUEST->all());
+        $REQUEST->validate([
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+        ]);
+        $data = CRUDadmin::create($REQUEST->all());
+           if($REQUEST->hasFile('image')){
+               $REQUEST->file('image')->move('image/', $REQUEST->file('image')->getClientOriginalName());
+               $data->image = $REQUEST->file('image')->getClientOriginalName();
+               if($data->save()) {
+                return new MuseumResource($data);
+            }
+           }
+           
+    }
 
     public function tampilkandata($id){
         $data =  CRUDadmin::find($id);
         // dd($data);
         return view('admin.museums.tampildata', compact('data'));
     }
-
     public function updatedata(request $REQUEST, $id){
         // dd($REQUEST->all());
         $data = CRUDadmin::find($id);
@@ -89,6 +117,23 @@ class MuseumController extends Controller
         $user->profile = $faker->imageUrl($width = 50, $height = 50);
         $user->save();
         return redirect()->action('MuseumController@userview', ['id'=> $id]);
+    }
+    public function addcommentapi(Request $REQUEST, $id){
+        $faker = Faker::create();
+        $hasil = CRUDadmin::find($id);
+        $user = new reviewModel();
+        $user->name = $REQUEST->name;
+        $user->comment = $REQUEST->comment;
+        $user->ratings = $REQUEST->ratings;
+        $user->id_museum = $REQUEST->id;
+        $user->profile = $faker->imageUrl($width = 50, $height = 50);
+        $user->save();
+        return new MuseumResource($user);
+    }
+    public function tampilkandataapi($id){
+        $data =  CRUDadmin::find($id);
+        // dd($data);
+        return new MuseumResource($data);
     }
     public function deletecomment($id, $id_comment){
         reviewModel::where('id',$id_comment)->delete();

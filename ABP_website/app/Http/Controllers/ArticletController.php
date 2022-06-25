@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Article;
+use App\Http\Resources\ArticleResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -10,8 +11,12 @@ class ArticletController extends Controller
     public function index()
     {
         $Post = Article::latest()->paginate(10);
-
         return view('admin.articles.crudarticle', compact('Post'));
+    }
+    public function indexapi()
+    {
+        $Post = Article::latest()->paginate(10);
+        return ArticleResource ::collection($Post);
     }
 
     /**
@@ -35,6 +40,7 @@ class ArticletController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'link_image' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
         ]);
         $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
@@ -44,11 +50,36 @@ class ArticletController extends Controller
         $Posts->author = $request->author;
         $Posts->title = $request->title;
         $Posts->description = $request->description;
+        $Posts->link_image = $request->link_image;
         $Posts->image = $newImageName;
         $Posts->save();
-
         return redirect('/articlepage')
             ->with('success', 'Artikel berhasil ditambahkan!');
+    }
+    public function storeapi(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'link_image' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+        ]);
+        $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImageName);
+        $Posts = new Article;
+        $Posts->slug = Str::slug($request->title);;
+        $Posts->author = $request->author;
+        $Posts->title = $request->title;
+        $Posts->description = $request->description;
+        $Posts->link_image = $request->link_image;
+        $Posts->image = $newImageName;
+        // $Posts->save();
+        if($Posts->save()) {
+            return new ArticleResource($Posts);
+        }
+
+        // return redirect('/articlepage')
+        //     ->with('success', 'Artikel berhasil ditambahkan!');
     }
 
     /**

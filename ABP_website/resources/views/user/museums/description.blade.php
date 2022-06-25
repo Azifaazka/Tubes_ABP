@@ -4,12 +4,12 @@
 <section id="description" class="py-5">
     <div class="container">
         <center>
-            <p style="font-size:40px;font-family: 'Lora';color: white;">{{ $data->nama_tempat }}</p>
+            <p style="font-size:40px;font-family: 'Lora';color: white;">{{ $data->nama }}</p>
             <img src="{{ asset('image/'. $data->image) }}" alt="" width="600" height="300" align="center">
             <br><br>
             <p style="font-size:25px;font-family: 'Lora';color: white;">Description</p>
             <p style="font-size:20px;font-family: 'Lora';color: white;">
-            {{ $data->Description }}
+            {{ $data->deskripsi }}
             </p>
         </center>
         <div class="row">
@@ -17,7 +17,7 @@
                 <center>
                     <p style="font-size:25px;font-family: 'Lora';color: white;">Location</p>
                     <p style="font-size:20px;font-family: 'Lora';color: white;">
-                    {{ $data->Location }}
+                    {{ $data->lokasi }}
                     </p>
                 </center>
             </div>
@@ -26,7 +26,7 @@
                     <p style="font-size:25px;font-family: 'Lora';color: white;">Rating</p>
                     <i class="fa fa-star" style="color: yellow;"></i>
                     <a style="font-size:20px;font-family: 'Lora';color: white;">
-                    {{ $data->Ratings }}
+                    {{ $data->rating }}
                     </a>
                 </center>
             </div>
@@ -34,7 +34,7 @@
                 <center>
                     <p style="font-size:25px;font-family: 'Lora';color: white;">Opening Hours</p>
                     <p style="font-size:20px;font-family: 'Lora';color: white;">
-                    {{ $data->open_hours }}
+                    {{ $data->open }}
                     </p>
                 </center>
             </div>

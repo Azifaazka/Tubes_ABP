@@ -1,0 +1,35 @@
+Fatahillah 
+longitude : -6.1350000 106.8130560
+latitude : 106.8130560
+
+Nasional 
+longitude : -6.172332644
+latitude : 106.819663388 
+
+Angkut
+longitude :-7.878645889330051
+latitude : 112.52011396293966
+
+The blanco
+latitude : 115.2540915101988 
+longitude : -8.504733144225348
+
+Ullen 
+latitude : 110.4234924562201  
+longitude : -7.597759248083206
+
+Siwalima 
+latitude : 128.15296976782398 -3.71319773319329
+longitude : -3.71319773319329
+
+Geologi 
+latitude : 107.62142311018053 
+longitude : -6.900545777143673
+
+KAA
+latitude : 107.60919094086879 
+longitude : -6.921032132557033
+
+Aceh 
+latitude : 95.31522031197952 
+longitude : 5.547882417533341

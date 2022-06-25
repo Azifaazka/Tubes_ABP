@@ -55,13 +55,13 @@
             <div class="card-body">
               <a href="/delete/{{$crudreview->id}}" class="btn btn-danger" style="float:right">Delete</a>
               <a href="/tampilkandata/{{$crudreview->id}}" class="btn btn-warning" style="float:right; margin-right: 10px;">Edit</a>
-              <h5 class="card-title">{{$crudreview->nama_tempat}}</h5>
+              <h5 class="card-title">{{$crudreview->nama}}</h5>
               <p class="card-text">
-                <regular class="text-muted"><i class="fa fa-star" style="color: yellow;"></i>{{$crudreview->Ratings}}</regular>
+                <regular class="text-muted"><i class="fa fa-star" style="color: yellow;"></i>{{$crudreview->rating}}</regular>
               </p>
-              <p class="card-text"><small class="text-muted"><b>{{$crudreview->Location}}</b></small></p>
-              <p class="card-text">{{$crudreview->Description}}</p>
-              <p class="card-text"><small class="text-muted"><b>Open hour:</b> {{$crudreview->open_hours}}</small></p>
+              <p class="card-text"><small class="text-muted"><b>{{$crudreview->lokasi}}</b></small></p>
+              <p class="card-text">{{$crudreview->deskripsi}}</p>
+              <p class="card-text"><small class="text-muted"><b>Open hour:</b> {{$crudreview->open}}</small></p>
               <a href="/CRUDreview/{{ $crudreview['id']}}" style="font-size:20px;font-family: 'Lora';color: #FFAD57;" class="float-right">
                   <u>See More</u>
                 </a>
